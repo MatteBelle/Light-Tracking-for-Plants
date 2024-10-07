@@ -13,24 +13,11 @@
 
 //ESP32 WIFI CONNECTION PART -------------------------------------------------------------------------------
 #include <WiFi.h>
-#include <HTTPClient.h>
-
-// Access Point credentials
-const char* ssid = "ESP32_AP";
-const char* password = "12345678";  // A password is required by ESP32 for AP mode
-
-// Server details (laptop's IP and port)
-const char* serverUrl = "http://<laptop-IP>:5000/sensor_data";
 //ESP32 WIFI CONNECTION PART -------------------------------------------------------------------------------
 
 void setup() {
 //ESP32 WIFI CONNECTION PART -------------------------------------------------------------------------------
-  // Start the Access Point
-  WiFi.softAP(ssid, password);
 
-  Serial.println("Access Point Started");
-  Serial.print("IP Address: ");
-  Serial.println(WiFi.softAPIP());
 //ESP32 WIFI CONNECTION PART -------------------------------------------------------------------------------
 
   // initialize serial communication at 9600 bits per second:
@@ -75,28 +62,7 @@ void loop() {
   }
 
 //ESP32 WIFI CONNECTION PART -------------------------------------------------------------------------------
-  // JSON payload
-  String jsonData = "{\"sensor_1_value\":" + String(LDR1_pin) + ",\"sensor_2_value\":" + String(LDR2_pin) + ",\"timestamp\":" + String(timestamp) + "}";
 
-  // Send data via HTTP
-  if(WiFi.softAPgetStationNum() > 0) {  // Check if there's any connected client
-    HTTPClient http;
-    http.begin(serverUrl);
-    http.addHeader("Content-Type", "application/json");
-
-    int httpResponseCode = http.POST(jsonData);
-    
-    if(httpResponseCode > 0) {
-      String response = http.getString();
-      Serial.println("Response from server: " + response);
-    } else {
-      Serial.println("Error on sending POST: " + String(httpResponseCode));
-    }
-
-    http.end();
-  } else {
-    Serial.println("No client connected to AP");
-  }
 //ESP32 WIFI CONNECTION PART -------------------------------------------------------------------------------
 
   delay(500);
