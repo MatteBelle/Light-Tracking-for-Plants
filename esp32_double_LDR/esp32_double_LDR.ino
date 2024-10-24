@@ -2,7 +2,7 @@
 #include <HTTPClient.h>
 #include <PubSubClient.h>
 
-// Wi-Fi credentials
+// Wi-Fi credentials/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/esp32_double_LDR/esp32_double_LDR.ino
 const char* ssid = "MatteoBellettiAifon";
 const char* password = "dopoladico";
 
@@ -10,7 +10,8 @@ const char* password = "dopoladico";
 const char* serverUrl = "http://172.20.10.2:5000/sensor_data";  // Replace with your laptop's IP address
 
 // MQTT broker details
-const char* mqtt_server = "172.20.10.2"; // Replace with the IP where the MQTT broker runs
+//const char* mqtt_server = "172.20.10.2"; // Replace with the IP where the MQTT broker runs 127.0.0.1
+const char* mqtt_server = "127.0.0.1";  // Replace with the IP where the MQTT broker runs
 const char* mqtt_topic_sampling = "plant/sampling_rate";
 const char* mqtt_topic_position = "plant/change_position";
 
@@ -21,7 +22,7 @@ PubSubClient client(espClient);
 #define LIGHT_SENSOR_PIN1 36  // ESP32 pin GIOP36 (ADC0)
 #define LIGHT_SENSOR_PIN2 39  // ESP32 pin GIOP39 (ADC0)
 
-int sampling_rate = 5000;  // Default to 5000ms (5 seconds)
+int sampling_rate = 5000;                // Default to 5000ms (5 seconds)
 String current_position = "position A";  // Default position
 
 // Function to connect to WiFi
@@ -62,7 +63,7 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
   }
 
   if (String(topic) == mqtt_topic_sampling) {
-    sampling_rate = message.toInt() * 1000; // multiplied by 1000 as it takes needs to convert milliseconds to seconds
+    sampling_rate = message.toInt() * 1000;  // multiplied by 1000 as it takes needs to convert milliseconds to seconds
     Serial.println("Sampling rate updated: " + String(sampling_rate) + " ms");
   }
 
@@ -97,7 +98,7 @@ void setup() {
 
   // Initialize WiFi and MQTT
   setup_wifi();
-  setup_mqtt();
+  //setup_mqtt();
 
   // Set the ADC attenuation to 11 dB (up to ~3.3V input)
   analogSetAttenuation(ADC_11db);
@@ -105,10 +106,10 @@ void setup() {
 
 // LOOP function
 void loop() {
-  if (!client.connected()) {
-    setup_mqtt();
-  }
-  client.loop();
+  // if (!client.connected()) {
+  //   setup_mqtt();
+  // }
+  //client.loop();
 
   // Read values from analog pins
   int LDR1_pin = analogRead(LIGHT_SENSOR_PIN1);
@@ -116,11 +117,7 @@ void loop() {
   long timestamp = millis();  // Get timestamp for the data
 
   // JSON payload with sensor data, timestamp, and current position
-  String jsonData = "{\"sensor_1_value\":" + String(LDR1_pin) + 
-                    ",\"sensor_2_value\":" + String(LDR2_pin) + 
-                    ",\"position\":\"" + String(current_position) + "\"" + 
-                    ",\"sampling_rate\":\"" + String(sampling_rate) + "\"" + 
-                    ",\"timestamp\":" + String(timestamp) + "}";
+  String jsonData = "{\"sensor_1_value\":" + String(LDR1_pin) + ",\"sensor_2_value\":" + String(LDR2_pin) + ",\"position\":\"" + String(current_position) + "\"" + ",\"sampling_rate\":\"" + String(sampling_rate) + "\"" + ",\"timestamp\":" + String(timestamp) + "}";
 
   // Print light conditions based on threshold
   if (LDR1_pin < 40) {
@@ -159,6 +156,9 @@ void loop() {
       Serial.println("Response: " + response);
     } else {
       Serial.println("Error sending POST: " + String(httpResponseCode));
+
+      http.begin(serverUrl);
+      http.addHeader("Content-Type", "application/json");
     }
 
     http.end();
