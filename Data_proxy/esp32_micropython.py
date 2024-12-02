@@ -26,7 +26,7 @@ LED_PIN = Pin(5, Pin.OUT)
 
 # Default sampling rate and position
 sampling_rate = 5000  # milliseconds
-current_position = "position A"
+current_position = "bedsidetable"
 
 # Wi-Fi connection setup
 def connect_wifi():

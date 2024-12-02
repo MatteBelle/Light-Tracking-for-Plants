@@ -36,16 +36,18 @@ import data_proxy_MQTT
 
 if __name__ == "__main__":
     #scripts = ['data_proxy_MQTT.py', 'data_analytics/main.py', 'data_analytics/run_predictions.py', 'telegram_bot.py']
-    scripts = ['data_proxy/data_proxy_MQTT.py', 'data_proxy/data_proxy_HTTP.py']
+    scripts = ['data_proxy_MQTT', 'data_proxy_HTTP']
+    scripts_extension = '.py'
+    scripts_folder = "data_proxy/"
     processes = []
+    # if log folder does not exist, create it
+    if not os.path.exists("logs"):
+        os.makedirs("logs")
     for script in scripts:
         try:
-            # if log folder does not exist, create it
-            if not os.path.exists("logs"):
-                os.makedirs("logs")
             # creating log files to store outputs and errors of each script
             with open(f"logs/{script}.log", "w") as log_file:
-                process = subprocess.Popen(['python', script], stdout=log_file, stderr=subprocess.STDOUT)
+                process = subprocess.Popen(['python', scripts_folder+script+scripts_extension], stdout=log_file, stderr=subprocess.STDOUT)
                 processes.append(process)
         except Exception as e:
             print(f"Error launching {script}: {e}")

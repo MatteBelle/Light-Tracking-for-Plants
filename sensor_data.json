@@ -437,3 +437,110 @@
 {"sensors_values": [3210, 2599], "timestamp": 7158016, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
 {"sensors_values": [3205, 2595], "timestamp": 7163219, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
 {"sensors_values": [3215, 2607], "timestamp": 7168451, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3247, 2621], "timestamp": 8211193, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3235, 2601], "timestamp": 8216397, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3216, 2608], "timestamp": 8221577, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3210, 2603], "timestamp": 8226754, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3213, 2603], "timestamp": 8231946, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3234, 2611], "timestamp": 8237294, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3181, 2647], "timestamp": 8242648, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3184, 2602], "timestamp": 8247842, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3216, 2605], "timestamp": 8253021, "position": "position A", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3206, 2602], "timestamp": 8262465, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3199, 2615], "timestamp": 8267666, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3168, 2602], "timestamp": 8272864, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3207, 2599], "timestamp": 8278035, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3231, 2603], "timestamp": 8283380, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3218, 2606], "timestamp": 8288744, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3238, 2603], "timestamp": 8293938, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3216, 2607], "timestamp": 8299125, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3207, 2605], "timestamp": 8304471, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3179, 2606], "timestamp": 8309645, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3209, 2604], "timestamp": 8315036, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3223, 2599], "timestamp": 8320248, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3231, 2598], "timestamp": 8325568, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3198, 2599], "timestamp": 8330750, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3205, 2601], "timestamp": 8335920, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3203, 2607], "timestamp": 8341092, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3200, 2598], "timestamp": 8346562, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3220, 2601], "timestamp": 8351883, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3248, 2605], "timestamp": 8357500, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3211, 2605], "timestamp": 8362838, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3189, 2599], "timestamp": 8368005, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3195, 2603], "timestamp": 8373227, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3218, 2602], "timestamp": 8378615, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3223, 2603], "timestamp": 8383784, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3231, 2603], "timestamp": 8389150, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3217, 2598], "timestamp": 8394487, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3200, 2559], "timestamp": 9136700, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3207, 2559], "timestamp": 9141900, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3221, 2559], "timestamp": 9147061, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3207, 2559], "timestamp": 9152250, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3213, 2559], "timestamp": 9157569, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3226, 2559], "timestamp": 9162896, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3194, 2559], "timestamp": 9168070, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3230, 2592], "timestamp": 9173444, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3231, 2559], "timestamp": 9178764, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3202, 2559], "timestamp": 9184117, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3219, 2559], "timestamp": 9189310, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3219, 2559], "timestamp": 9194487, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3210, 2559], "timestamp": 9199868, "position": "bedside table", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3247, 2559], "timestamp": 9216785, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3191, 2597], "timestamp": 9222011, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3200, 2559], "timestamp": 9227201, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3215, 2559], "timestamp": 9232384, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3206, 2559], "timestamp": 9237747, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3190, 2559], "timestamp": 9243079, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3203, 2559], "timestamp": 9248408, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3206, 2559], "timestamp": 9253582, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3245, 2559], "timestamp": 9258944, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3184, 2559], "timestamp": 9264269, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3214, 2582], "timestamp": 9269880, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3221, 2559], "timestamp": 9275229, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3203, 2559], "timestamp": 9280395, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3202, 2557], "timestamp": 9285767, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3199, 2559], "timestamp": 9290936, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3222, 2559], "timestamp": 9296126, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3218, 2583], "timestamp": 9301441, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3206, 2559], "timestamp": 9306770, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3203, 2559], "timestamp": 9312097, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3185, 2586], "timestamp": 9317419, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3203, 2587], "timestamp": 9322743, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3223, 2559], "timestamp": 9327905, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3213, 2559], "timestamp": 9333087, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3235, 2559], "timestamp": 9338266, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3200, 2559], "timestamp": 9343628, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3207, 2559], "timestamp": 9348979, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3208, 2559], "timestamp": 9354179, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3219, 2559], "timestamp": 9359499, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3200, 2559], "timestamp": 9364686, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3221, 2559], "timestamp": 9370048, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3195, 2559], "timestamp": 9375220, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3301, 2668], "timestamp": 9380397, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3234, 2631], "timestamp": 9385589, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3194, 2634], "timestamp": 9390768, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3196, 2635], "timestamp": 9395981, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3200, 2634], "timestamp": 9401175, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3219, 2635], "timestamp": 9406705, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3235, 2636], "timestamp": 9411866, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3193, 2629], "timestamp": 9417055, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3226, 2626], "timestamp": 9422223, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3248, 2631], "timestamp": 9427596, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3237, 2636], "timestamp": 9432926, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3215, 2634], "timestamp": 9438251, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3187, 2630], "timestamp": 9443570, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3195, 2635], "timestamp": 9448897, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3223, 2630], "timestamp": 9454222, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3235, 2662], "timestamp": 9459649, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3216, 2627], "timestamp": 9464975, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3171, 2634], "timestamp": 9470305, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3201, 2635], "timestamp": 9475624, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3200, 2634], "timestamp": 9480951, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3215, 2631], "timestamp": 9486283, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3216, 2639], "timestamp": 9491602, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3185, 2636], "timestamp": 9496921, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3199, 2629], "timestamp": 9502093, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3216, 2635], "timestamp": 9507270, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3209, 2630], "timestamp": 9512461, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3204, 2630], "timestamp": 9517632, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}
+{"sensors_values": [3199, 2630], "timestamp": 9522817, "position": "bedsidetable", "sampling_rate": 5000, "device_id": "ESP32_1"}

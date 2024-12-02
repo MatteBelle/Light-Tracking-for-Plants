@@ -22,20 +22,21 @@ def save_to_influxdb(data):
 
 
 # Example usage (replace with actual HTTP handler code)
-if __name__ == "__main__":
+#if __name__ == "__main__":
+
     # Simulated data received from ESP32
-    influx_data = [
-        {
-            "measurement_name": "light_measurement",  # Example measurement name
-            "tag": {
-                "device_id": "ESP32_1",          # Example device ID
-                "position": "position A",        # Example position
-                "sampling_rate": "5000ms",       # Example sampling rate
-            },
-            "field": {
-                "sensors_mean": 3218   # Example sensor value mean
-            }
-            # InfluxDB handles timestamp automatically
-        }
-    ]
-    save_to_influxdb(influx_data)
+    # influx_data = [
+    #     {
+    #         "measurement_name": "light_measurement",  # Example measurement name
+    #         "tag": {
+    #             "device_id": "ESP32_1",          # Example device ID
+    #             "position": "position A",        # Example position
+    #             "sampling_rate": "5000ms",       # Example sampling rate
+    #         },
+    #         "field": {
+    #             "sensors_mean": 3218   # Example sensor value mean
+    #         }
+    #         # InfluxDB handles timestamp automatically
+    #     }
+    # ]
+    # save_to_influxdb(influx_data)
