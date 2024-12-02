@@ -1,0 +1,10 @@
+/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/data_proxy/data_proxy_MQTT.py:11: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  self.client = mqtt.Client()
+2024-12-02 18:12:57,790 - INFO - Connected to MQTT Broker successfully.
+2024-12-02 18:12:57,790 - INFO - MQTT client connected to broker at localhost
+2024-12-02 18:12:57,790 - INFO - Published message: 5s to topic: plant/sampling_rate
+2024-12-02 18:12:57,790 - INFO - Plant position changed to: Living Room
+2024-12-02 18:12:57,790 - INFO - Published message: Living Room to topic: plant/change_position
+2024-12-02 18:15:18,393 - WARNING - Disconnected from MQTT Broker. Return code: 0
+2024-12-02 18:15:18,393 - INFO - MQTT client disconnected.
+MQTT client disconnected.

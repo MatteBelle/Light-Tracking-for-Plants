@@ -1,0 +1,82 @@
+ * Serving Flask app 'data_proxy_HTTP'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.10.2:5000
+[33mPress CTRL+C to quit[0m
+172.20.10.3 - - [02/Dec/2024 18:13:09] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:13:14] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:13:19] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:13:24] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:13:29] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:13:35] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:13:40] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:13:45] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:13:51] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:13:56] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:01] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:06] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:11] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:17] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:22] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:27] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:33] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:38] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:43] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:48] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:54] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:14:59] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:15:04] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:15:09] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+172.20.10.3 - - [02/Dec/2024 18:15:14] "[35m[1mPOST /sensor_data HTTP/1.0[0m" 500 -
+{'sensors_values': [3201, 2601], 'timestamp': 4014178, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3216, 2559], 'timestamp': 4019381, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3201, 2597], 'timestamp': 4024562, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3206, 2598], 'timestamp': 4029818, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3218, 2605], 'timestamp': 4035026, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3205, 2598], 'timestamp': 4040236, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3233, 2598], 'timestamp': 4045449, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3201, 2593], 'timestamp': 4050882, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3230, 2602], 'timestamp': 4056198, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3201, 2599], 'timestamp': 4061383, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3231, 2597], 'timestamp': 4066771, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3213, 2592], 'timestamp': 4071947, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3248, 2600], 'timestamp': 4077129, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3191, 2598], 'timestamp': 4082307, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3214, 2598], 'timestamp': 4087640, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3217, 2598], 'timestamp': 4092878, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3226, 2601], 'timestamp': 4098088, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3248, 2598], 'timestamp': 4103415, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3227, 2614], 'timestamp': 4108629, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3258, 2598], 'timestamp': 4113859, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3210, 2594], 'timestamp': 4119082, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3200, 2594], 'timestamp': 4124320, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3179, 2608], 'timestamp': 4129533, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3243, 2584], 'timestamp': 4134745, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str
+{'sensors_values': [3207, 2605], 'timestamp': 4139943, 'position': 'position A', 'sampling_rate': 5000, 'device_id': 'ESP32_1'}
+Error in /sensor_data: list indices must be integers or slices, not str

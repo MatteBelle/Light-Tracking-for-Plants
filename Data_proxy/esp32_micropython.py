@@ -6,7 +6,7 @@ from machine import Pin, ADC
 from umqtt.simple import MQTTClient
 
 # Set the ID of the ESP32/ARDUINO, so that data is placed in the right bucket.
-DEVICE_ID = "001"
+DEVICE_ID = "ESP32_1"
 
 # Wi-Fi credentials
 WIFI_SSID = "MatteoBellettiAifon"
@@ -37,7 +37,7 @@ def connect_wifi():
     
     while not wlan.isconnected():
         print(f"[WiFi] waiting for connection to {WIFI_SSID}...")
-        utime.sleep(1)
+        utime.sleep(3)
     print("\nConnected to WiFi")
     print(f"IP: {wlan.ifconfig()[0]}")
 
@@ -80,7 +80,7 @@ def interpret_light(value, sensor_id):
     elif value < 3200:
         print(f" => Bright{sensor_id}: {value}")
     else:
-        print(f" => Very bright{sensor_id}: + {value}")
+        print(f" => Very bright{sensor_id}: {value}")
 
 #TODELETE
 def blink():
@@ -109,19 +109,19 @@ def main():
         interpret_light(ldr1_value, 1)
         interpret_light(ldr2_value, 2)
 
-        # JSON data for HTTP
-        json_data = {
-            "sensor_1_value": ldr1_value,
-            "sensor_2_value": ldr2_value,
+        # data to send to HTTP
+        data = {
+            #TODO check this out: recently modified sensor values to be a vector
+            "sensors_values": [ldr1_value,ldr2_value],
             "position": current_position,
             "sampling_rate": sampling_rate,
-            "timestamp": timestamp
+            "timestamp": timestamp,
             "device_id": DEVICE_ID
         }
         LED_PIN.on()
         # Send data via HTTP
         try:
-            response = urequests.post(SERVER_URL, json=json_data)
+            response = urequests.post(SERVER_URL, json=data)
             print("Response:", response.text)
             response.close()
         except Exception as e:
