@@ -12,12 +12,11 @@ write_api = client.write_api(write_options=SYNCHRONOUS)
 def save_to_influxdb(data):
     point = (
         Point(data["measurement_name"])
-        .tag("device_id", data["tag"]["sampling_rate"])
+        .tag("device_id", data["tag"]["device_id"])
         .tag("position", data["tag"]["position"])
         .tag("sampling_rate", data["tag"]["sampling_rate"])
+        .field("sensors_mean", data["field"]["sensors_mean"])
     )
-    for i in range(len(data["field"]["sensors_values"])):
-        point.field(f"sensor_{i+1}_luminosity", data["field"]["sensors_values"][i])
     write_api.write(bucket=INFLUXDB_BUCKET, org=INFLUXDB_ORG, record=point)
     print(f"Data successfully written to InfluxDB: {point}")
 
@@ -34,7 +33,7 @@ if __name__ == "__main__":
                 "sampling_rate": "5000ms",       # Example sampling rate
             },
             "field": {
-                "sensors_values": [3218, 2599]   # Example sensor values
+                "sensors_mean": 3218   # Example sensor value mean
             }
             # InfluxDB handles timestamp automatically
         }

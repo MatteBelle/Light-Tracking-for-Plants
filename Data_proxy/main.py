@@ -40,8 +40,11 @@ if __name__ == "__main__":
     processes = []
     for script in scripts:
         try:
+            # if log folder does not exist, create it
+            if not os.path.exists("logs"):
+                os.makedirs("logs")
             # creating log files to store outputs and errors of each script
-            with open(f"{script}.log", "w") as log_file:
+            with open(f"logs/{script}.log", "w") as log_file:
                 process = subprocess.Popen(['python', script], stdout=log_file, stderr=subprocess.STDOUT)
                 processes.append(process)
         except Exception as e:

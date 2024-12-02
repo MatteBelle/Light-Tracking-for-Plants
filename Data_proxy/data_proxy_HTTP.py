@@ -26,7 +26,7 @@ class DataProxyHTTP:
         def sensor_data():
             try:
                 data = request.get_json()
-                print("A")
+                
                 now = datetime.now()
                 print(data)
                 # Prepare data for InfluxDB
@@ -38,24 +38,19 @@ class DataProxyHTTP:
                             "sampling_rate": data["sampling_rate"],
                         },
                         "field": {
-                            "sensors_values": data["sensors_values"]
+                            "sensors_mean": sum(data["sensors_values"]) / len(data["sensors_values"]),
                         }
                         # InfluxDB handles timestamp automatically
                     }
-                print("AA")
 
                 # Save data locally to a file
                 with open(self.json_file, 'a') as f:
                     json.dump(data, f)
                     f.write('\n')
-                print("AAA")
                 
-
-                # Optional: Save to InfluxDB (uncomment if needed)
                 save_to_influxdb(influx_data)
-                print("AAAA")
 
-                return jsonify({"status": "success"}), 200
+                return jsonify({"status": "success", "mean": (sum(data["sensors_values"]) / len(data["sensors_values"]))}), 200
 
             except Exception as e:
                 print(f"Error in /sensor_data: {str(e)}")
