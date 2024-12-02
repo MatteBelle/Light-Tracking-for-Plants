@@ -3,3 +3,4 @@
 *.pyc
 *.log
 *.env
+sensor_data.json
