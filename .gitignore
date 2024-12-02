@@ -1,3 +1,4 @@
 _pycache_
 logs/*
 *.pyc
+*.log
