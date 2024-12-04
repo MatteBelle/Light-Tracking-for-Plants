@@ -34,6 +34,8 @@ import data_proxy_MQTT
 #     # except KeyboardInterrupt:
 #     #     mqtt_proxy.disconnect()
 
+# MACOS
+
 if __name__ == "__main__":
     #scripts = ['data_proxy_MQTT.py', 'data_analytics/main.py', 'data_analytics/run_predictions.py', 'telegram_bot.py']
     scripts = ['data_proxy_MQTT', 'data_proxy_HTTP']
@@ -54,3 +56,27 @@ if __name__ == "__main__":
 
     for process in processes:
         process.wait()
+
+
+# # WINDOWS
+
+# if __name__ == "__main__":
+#     #scripts = ['data_proxy_MQTT.py', 'data_analytics/main.py', 'data_analytics/run_predictions.py', 'telegram_bot.py']
+#     scripts = ['data_proxy_MQTT', 'data_proxy_HTTP']
+#     scripts_extension = '.py'
+#     scripts_folder = "Data_proxy\\"
+#     processes = []
+#     # if log folder does not exist, create it
+#     if not os.path.exists("logs"):
+#         os.makedirs("logs")
+#     for script in scripts:
+#         try:
+#             # creating log files to store outputs and errors of each script
+#             with open(f"logs/{script}.log", "w") as log_file:
+#                 process = subprocess.Popen(['python', script+scripts_extension], stdout=log_file, stderr=subprocess.STDOUT)
+#                 processes.append(process)
+#         except Exception as e:
+#             print(f"Error launching {script}: {e}")
+
+#     for process in processes:
+#         process.wait()
