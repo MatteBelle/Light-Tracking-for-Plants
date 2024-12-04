@@ -1,5 +1,7 @@
-influxdb-client
-ortools
-paho-mqtt
+python-dotenv
 flask
+influxdb
+influxdb-client
+paho-mqtt
+ortools
 request
