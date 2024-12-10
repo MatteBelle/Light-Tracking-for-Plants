@@ -1,5 +1,0 @@
-influxdb-client
-ortools
-paho-mqtt
-flask
-request
