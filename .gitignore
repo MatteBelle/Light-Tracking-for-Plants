@@ -5,3 +5,4 @@
 *.env
 sensor_data.json
 *local*
+.DS_Store
