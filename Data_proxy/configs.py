@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Shared configs
-JSON_FILE = "sensor_data.json"
+JSON_FILE = "local_sensor_data.json"
 PLANT_POSITION = "bedside table"
 
 # Configs for HTTP
