@@ -6,8 +6,6 @@ import os
 
 import subprocess
 from configs import *
-import data_proxy_HTTP
-import data_proxy_MQTT
 
 # if __name__ == "__main__":
 #     # HTTP

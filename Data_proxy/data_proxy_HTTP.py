@@ -1,10 +1,9 @@
 import json
-import time
+import datetime
 from flask import Flask, request, jsonify
-from influxdb import InfluxDBClient
-from datetime import datetime
 from configs import *  # Access configuration constants
 from influxdb_custom_handler import save_to_influxdb  # Custom InfluxDB handler
+from Prediction.xgb_prediction import LightPredictor
 
 
 class DataProxyHTTP:
@@ -15,6 +14,9 @@ class DataProxyHTTP:
         self.http_port = HTTP_PORT
         self.http_host = HTTP_HOST
         self.measurement_name = INFLUXDB_MEASUREMENT_NAME
+        self.predictor = LightPredictor(XGB_MODEL_PATH, XGB_ENCODER_PATH)
+        # Initialize the predicted light level to 0
+        self.predicted_light_level = 50  # Default value
 
         # Define routes
         self._setup_routes()
@@ -30,9 +32,9 @@ class DataProxyHTTP:
         def sensor_data():
             try:
                 data = request.get_json()
+                datetime.datetime.now().hour
                 print(data)
                 normalized_mean = self.normalize_light_value(sum(data["sensors_values"]) / len(data["sensors_values"]))
-
                 # Prepare data for InfluxDB
                 influx_data = {
                         "measurement_name": self.measurement_name,
@@ -43,9 +45,12 @@ class DataProxyHTTP:
                         },
                         "field": {
                             "sensors_mean_normalized": normalized_mean,
+                            "predicted_light_level": self.predicted_light_level # uses previous predicted value which will be compared with real one
                         }
                         # InfluxDB handles timestamp automatically
                     }
+                # predicts next light level
+                self.predicted_light_level = self.predictor.predict(datetime.datetime.now().hour, data["position"], normalized_mean)
 
                 # Save data locally to a file
                 with open(self.json_file, 'a') as f:

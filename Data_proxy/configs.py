@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Shared configs
-XGB_model_path = "/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/Prediction/ModelsWeights/xgb_model_nboost30.json"
-XGB_encoder_path = "/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/Prediction/ModelsWeights/room_encoder.npy"
+XGB_MODEL_PATH = "/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/Prediction/ModelsWeights/xgb_model_nboost30.json"
+XGB_ENCODER_PATH = "/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/Prediction/ModelsWeights/room_encoder.npy"
 JSON_FILE = "local_sensor_data.json"
 PLANT_POSITION = "bedroom"
 MAX_ABS_LIGHT_VALUE = 65535
