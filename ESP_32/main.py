@@ -1,6 +1,3 @@
-# THIS IS THE CODE TO BE UPLOADED TO THE ESP32/ARDUINO
-# NB: change the configurations for WIFI credentials and MQTT servers
-
 import network
 import urequests
 import utime
@@ -103,6 +100,13 @@ def read_sensors():
     ldr2.atten(ADC.ATTN_11DB)
     return ldr1.read(), ldr2.read()
 
+# Read sensor values
+def read_sensors_u16():
+    #val = adc.read_u16()  # read a raw analog value in the range 0-65535
+    ldr1 = ADC(Pin(LIGHT_SENSOR_PIN1))
+    ldr2 = ADC(Pin(LIGHT_SENSOR_PIN2))
+    return ldr1.read_u16(), ldr2.read_u16()
+
 # FOR DEBUGGING -> Interpret light level
 def interpret_light(value, sensor_id):
     if value < 40:
@@ -133,7 +137,7 @@ def main():
         client.check_msg()
         
         # Read sensors
-        ldr1_value, ldr2_value = read_sensors()
+        ldr1_value, ldr2_value = read_sensors_u16()
         timestamp = utime.ticks_ms()
         
         # Interpret light levels
