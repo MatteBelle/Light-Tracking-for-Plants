@@ -5,7 +5,9 @@ load_dotenv()
 
 # Shared configs
 JSON_FILE = "local_sensor_data.json"
-PLANT_POSITION = "bedside table"
+PLANT_POSITION = "bedroom"
+MAX_ABS_LIGHT_VALUE = 65535
+MAX_NORMALIZED_LIGHT_VALUE = 100
 
 # Configs for HTTP
 HTTP_PORT = 5000

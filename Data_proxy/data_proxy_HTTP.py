@@ -18,6 +18,10 @@ class DataProxyHTTP:
 
         # Define routes
         self._setup_routes()
+    
+    def normalize_light_value(self, light_value):
+        """Normalize the light sensor value to a scale of 0-100."""
+        return (light_value / MAX_ABS_LIGHT_VALUE) * MAX_NORMALIZED_LIGHT_VALUE
 
     def _setup_routes(self):
         """Define the routes for the Flask app."""
@@ -26,9 +30,9 @@ class DataProxyHTTP:
         def sensor_data():
             try:
                 data = request.get_json()
-                
-                now = datetime.now()
                 print(data)
+                normalized_mean = self.normalize_light_value(sum(data["sensors_values"]) / len(data["sensors_values"]))
+
                 # Prepare data for InfluxDB
                 influx_data = {
                         "measurement_name": self.measurement_name,
@@ -38,7 +42,7 @@ class DataProxyHTTP:
                             "sampling_rate": data["sampling_rate"],
                         },
                         "field": {
-                            "sensors_mean": sum(data["sensors_values"]) / len(data["sensors_values"]),
+                            "sensors_mean_normalized": normalized_mean,
                         }
                         # InfluxDB handles timestamp automatically
                     }
@@ -50,7 +54,7 @@ class DataProxyHTTP:
                 
                 save_to_influxdb(influx_data)
 
-                return jsonify({"status": "success", "mean": (sum(data["sensors_values"]) / len(data["sensors_values"]))}), 200
+                return jsonify({"status": "success", "normalized_mean": normalized_mean}), 200
 
             except Exception as e:
                 print(f"Error in /sensor_data: {str(e)}")
