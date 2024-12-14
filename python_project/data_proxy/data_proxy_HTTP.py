@@ -47,7 +47,7 @@ class DataProxyHTTP:
                         },
                         "field": {
                             "sensors_mean_normalized": normalized_mean,
-                            "predicted_light_level": self.predicted_light_level # uses previous predicted value which will be compared with real one
+                            "predicted_light_level": int(self.predicted_light_level) # uses previous predicted value which will be compared with real one
                         }
                         # InfluxDB handles timestamp automatically
                     }

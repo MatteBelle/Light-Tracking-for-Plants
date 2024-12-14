@@ -9,19 +9,17 @@ DEVICE_ID = "ESP32_1"
 
 # Wi-Fi credentials (alternating options)
 WIFI_CREDENTIALS = [
-    #("MatteoBellettiAifon", "dopoladico"),
+    ("MatteoBellettiAifon", "dopoladico"),
     ("FASTWEB-BellMant", "teladicodopo")
 ]
 
-# Server and MQTT broker details (alternating options)
-SERVER_URLS = [
-    "http://192.168.1.92:5000/sensor_data",  # macOS
-    "http://192.168.1.67:5000/sensor_data"  # Windows
-]
+SERVER_URL = ":5000/sensor_data"
 
-MQTT_SERVERS = [
-    "192.168.1.92",
-    "192.168.1.67"  # Windows
+# Server and MQTT broker details (alternating options)
+MQTT_ADDRESSES = [
+    "192.168.1.92", # Macos
+    "172.20.10.15",
+    "192.168.1.67" # Windows
 ]
 
 MQTT_PORT = 1883
@@ -71,23 +69,23 @@ def mqtt_callback(topic, msg):
 
 # Setup MQTT client
 def setup_mqtt():
-    global SERVER_URL, MQTT_SERVER
+    global SERVER_URL_COMPLETE
     client = None
 
-    for mqtt_server, server_url in zip(MQTT_SERVERS, SERVER_URLS):
-        print(f"Trying MQTT server: {mqtt_server} and HTTP server: {server_url}")
+    for mqtt_address in MQTT_ADDRESSES:
+        print(f"Trying MQTT server: {mqtt_address} and HTTP server: {SERVER_URL}")
         try:
-            client = MQTTClient("ESP32Client", mqtt_server, port=MQTT_PORT)
+            client = MQTTClient("ESP32Client", mqtt_address, port=MQTT_PORT)
             client.set_callback(mqtt_callback)
             client.connect()
-            print(f"Connected to MQTT server: {mqtt_server}")
+            print(f"Connected to MQTT server: {mqtt_address}")
             client.subscribe(MQTT_TOPIC_SAMPLING)
             client.subscribe(MQTT_TOPIC_POSITION)
-            global SERVER_URL
-            SERVER_URL = server_url
+            # Create the complete url to match the server
+            SERVER_URL_COMPLETE = f"http://{mqtt_address}{SERVER_URL}"
             return client
         except Exception as e:
-            print(f"Failed to connect to MQTT server: {mqtt_server}, Error: {e}")
+            print(f"Failed to connect to MQTT server: {mqtt_address}, Error: {e}")
 
     print("Failed to connect to any MQTT server.")
     return None
@@ -109,13 +107,13 @@ def read_sensors_u16():
 
 # FOR DEBUGGING -> Interpret light level
 def interpret_light(value, sensor_id):
-    if value < 40:
+    if value < 5000:
         print(f" => Dark{sensor_id}: {value}")
-    elif value < 800:
+    elif value < 15000:
         print(f" => Dim{sensor_id}: {value}")
-    elif value < 2000:
+    elif value < 30000:
         print(f" => Light{sensor_id}: {value}")
-    elif value < 3200:
+    elif value < 45000:
         print(f" => Bright{sensor_id}: {value}")
     else:
         print(f" => Very bright{sensor_id}: {value}")
@@ -155,7 +153,8 @@ def main():
         LED_PIN.on()
         # Send data via HTTP
         try:
-            response = urequests.post(SERVER_URL, json=data)
+            print(data)
+            response = urequests.post(SERVER_URL_COMPLETE, json=data)
             print("Response:", response.text)
             response.close()
         except Exception as e:
