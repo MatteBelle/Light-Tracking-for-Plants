@@ -3,7 +3,7 @@ import datetime
 from flask import Flask, request, jsonify
 from configs import *  # Access configuration constants
 from influxdb_custom_handler import save_to_influxdb  # Custom InfluxDB handler
-from Prediction.xgb_prediction import LightPredictor
+from prediction.xgb_prediction import LightPredictor
 
 
 class DataProxyHTTP:
@@ -22,6 +22,7 @@ class DataProxyHTTP:
         self._setup_routes()
     
     def normalize_light_value(self, light_value):
+        print(light_value, "called normalize_light_value")
         """Normalize the light sensor value to a scale of 0-100."""
         return (light_value / MAX_ABS_LIGHT_VALUE) * MAX_NORMALIZED_LIGHT_VALUE
 
@@ -31,6 +32,7 @@ class DataProxyHTTP:
         @self.app.route('/sensor_data', methods=['POST'])
         def sensor_data():
             try:
+                print("Received sensor data")
                 data = request.get_json()
                 datetime.datetime.now().hour
                 print(data)
@@ -50,6 +52,7 @@ class DataProxyHTTP:
                         # InfluxDB handles timestamp automatically
                     }
                 # predicts next light level
+                print("Predicted light level: ", self.predicted_light_level)
                 self.predicted_light_level = self.predictor.predict(datetime.datetime.now().hour, data["position"], normalized_mean)
 
                 # Save data locally to a file
