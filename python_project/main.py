@@ -1,7 +1,8 @@
+import sys
 import subprocess
 from data_proxy.configs import *
-
-scripts = ['data_proxy_MQTT', 'data_proxy_HTTP']
+sys.path.append('/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/python_project/')
+scripts = ['data_proxy_HTTP', 'data_proxy_MQTT']
 scripts_extension = '.py'
 
 scripts_folder = "python_project/data_proxy/"

@@ -5,7 +5,7 @@ import numpy as np
 
 # Constants
 start_date = datetime(2024, 11, 1)  # Start date: 1st November
-end_date = datetime(2024, 11, 30)  # End date: 30th November
+end_date = datetime(2024, 12, 14)  # End date: 30th November
 rooms = ["balcony", "bedroom", "living_room"]
 hours_in_day = 24
 days_in_november = 30
