@@ -16,13 +16,13 @@ initial_sunset = datetime.strptime("17:00", "%H:%M")
 
 # Light bounds for each room (upper and lower bounds)
 room_light_bounds = {
-    "balcony": (60, 100),
+    "balcony": (70, 100),
     "bedroom": (40, 80),
     "living_room": (20, 60),
 }
 
 # Function to generate light level based on normal distribution
-def generate_light_level(bounds, variance_factor=0.2):
+def generate_light_level(bounds, variance_factor=0.12):
     """
     Generate a light level using a normal distribution.
     :param bounds: Tuple of (min_light, max_light).
