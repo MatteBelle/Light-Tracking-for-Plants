@@ -7,6 +7,8 @@ load_dotenv()
 XGB_MODEL_PATH = "/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/python_project/prediction/models_weights/xgb_model_nboost30.json"
 XGB_ENCODER_PATH = "/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/python_project/prediction/models_weights/room_encoder.npy"
 JSON_FILE = "local_sensor_data.json"
+CONFIG_PLANT_FILE = "config_plant.json"
+CONFIG_POSITION_FILE = "config_position.json"
 PLANT_POSITION = "bedroom"
 MAX_ABS_LIGHT_VALUE = 65535
 MAX_NORMALIZED_LIGHT_VALUE = 100

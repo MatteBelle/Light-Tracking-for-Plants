@@ -2,8 +2,7 @@ import json
 import datetime
 from flask import Flask, request, jsonify
 from configs import *  # Access configuration constants
-#from influxdb_custom_handler import save_to_influxdb, get_average_light_last_7_days()  # Custom InfluxDB handler
-from influxdb_custom_handler import save_to_influxdb
+from influxdb_custom_handler import save_to_influxdb, get_average_light_last_7_days  # Custom InfluxDB handler
 import sys
 #this is needed as vscode wouldn't otherwise find the module
 sys.path.append('/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/python_project/')

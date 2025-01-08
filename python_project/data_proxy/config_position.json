@@ -1,0 +1,2 @@
+{"name": "bedroom", "ID": 1, "description": "Matteo's bedroom", "sensor": "ESP32_1"}
+{"name": "balcony", "ID": 2, "description": "house main balcony", "sensor": "ESP32_1"}

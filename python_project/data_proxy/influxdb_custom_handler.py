@@ -20,16 +20,16 @@ def save_to_influxdb(data):
     )
     write_api.write(bucket=INFLUXDB_BUCKET, org=INFLUXDB_ORG, record=point)
     print(f"Data successfully written to InfluxDB: {point}")
-    
-# TO TEST
+
 def get_average_light_last_7_days():
     query = f'''
-    from(bucket: "{INFLUXDB_BUCKET}")
-      |> range(start: -7d)
-      |> filter(fn: (r) => r._measurement == "{INFLUXDB_MEASUREMENT_NAME}")
-      |> filter(fn: (r) => exists r.position)
-      |> group(columns: ["position"])
-      |> mean(column: "sensors_mean_normalized")
+from(bucket: "{INFLUXDB_BUCKET}")
+  |> range(start: -7d)
+  |> filter(fn: (r) => r["_measurement"] == "{INFLUXDB_MEASUREMENT_NAME}")
+  |> filter(fn: (r) => r["_field"] == "sensors_mean")
+  |> filter(fn: (r) => r["position"] == "bedroom")
+  |> aggregateWindow(every: 10m, fn: mean, createEmpty: false)
+  |> yield(name: "mean")
     '''
 
     try:
