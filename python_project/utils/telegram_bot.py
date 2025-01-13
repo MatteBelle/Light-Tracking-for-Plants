@@ -1,5 +1,4 @@
 import json
-import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackQueryHandler, ConversationHandler, CallbackContext
 
@@ -35,7 +34,11 @@ async def start(update: Update, context: CallbackContext):
         [InlineKeyboardButton("Utility", callback_data='utility')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    await update.message.reply_text('Welcome to the Plant and Position Management Bot!', reply_markup=reply_markup)
+    
+    if update.message:  # Called via a /start command or MessageHandler
+        await update.message.reply_text('Welcome to the Plant and Position Management Bot!', reply_markup=reply_markup)
+    elif update.callback_query:  # Called via a CallbackQueryHandler
+        await update.callback_query.edit_message_text('Welcome to the Plant and Position Management Bot!', reply_markup=reply_markup)
 
 # ---------------------------- Plant UTILITY ----------------------------
 async def utility(update: Update, context: CallbackContext):
@@ -49,14 +52,22 @@ async def utility(update: Update, context: CallbackContext):
 async def suggest_change(update: Update, context: CallbackContext):
     """Suggest a position change for a plant based on light data."""
     plant_manager = PlantLightManager()
-    #I ant to concatenate the string with the plant_manager.suggest_position() result
     suggestions = "".join(f"- {el}\n" for el in plant_manager.suggest_position())
+
     if suggestions:
-        await update.callback_query.edit_message_text(suggestions)
+        await update.callback_query.edit_message_text(
+            text=f"Here are the suggested position changes:\n{suggestions}\n",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Back to Main Menu", callback_data="start")]
+            ])
+        )
     else:
-        await update.callback_query.edit_message_text("No suggestions available at the moment.")
-    await start(update, context)
-    return ConversationHandler.END
+        await update.callback_query.edit_message_text(
+            text="No suggestions available at the moment.\n",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Back to Main Menu", callback_data="start")]
+            ])
+        )
 
 # ---------------------------- Plant Management ----------------------------
 async def manage_plants(update: Update, context: CallbackContext):
@@ -79,8 +90,8 @@ async def add_plant(update: Update, context: CallbackContext):
 
 async def modify_plant(update: Update, context: CallbackContext):
     """Start modifying an existing plant."""
-    template = "Available plants: \n" + str(read_json_file(CONFIG_PLANT_FILE)) + "\n"
-    await update.callback_query.edit_message_text(template + 'Enter plant details to modify the plant with the same code (name, code, optimal light, position, sensor):')
+    template = "".join(f"- {el}\n" for el in read_json_file(CONFIG_PLANT_FILE))
+    await update.callback_query.edit_message_text(template + '\nEnter plant details to modify the plant with the same code (name, code, optimal light, position, sensor):')
     return MODIFY_PLANT
 
 async def delete_plant(update: Update, context: CallbackContext):
@@ -108,8 +119,8 @@ async def add_position(update: Update, context: CallbackContext):
 
 async def modify_position(update: Update, context: CallbackContext):
     """Start modifying an existing position."""
-    template = "Available positions: \n" + str(read_json_file(CONFIG_POSITION_FILE)) + "\n"
-    await update.callback_query.edit_message_text(template + 'Enter position details to modify position with same ID (name, ID, description, sensor):')
+    template = "".join(f"- {el}\n" for el in read_json_file(CONFIG_POSITION_FILE))
+    await update.callback_query.edit_message_text(template + '\nEnter position details to modify position with same ID (name, ID, description, sensor):')
     return MODIFY_POSITION
 
 async def delete_position(update: Update, context: CallbackContext):
@@ -280,6 +291,7 @@ def main():
             DELETING_POSITION: [MessageHandler(filters.TEXT & ~filters.COMMAND, handle_deleting_position)],
         },
         fallbacks=[CommandHandler('start', start)],  # Reset to start if conversation ends or user cancels
+        per_message=False,  # Allow multiple messages to be processed in parallel
     )
     application.add_handler(conversation_handler)
     # Add callback query handler to handle inline button presses    

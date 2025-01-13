@@ -2,10 +2,6 @@ import xgboost as xgb
 import pandas as pd
 import numpy as np
 
-import xgboost as xgb
-import pandas as pd
-import numpy as np
-
 class LightPredictor:
     def __init__(self, model_path, encoder_path):
         # Load trained model
@@ -29,7 +25,7 @@ class LightPredictor:
             float: Predicted next light level.
         """
         # Prepare input data as a dictionary
-        input_data = {'timestamp': [timestamp], 'light_level': [light_level]}
+        input_data = {'hour': [timestamp], 'light_level': [light_level]}
         
         # Initialize one-hot encoding for rooms
         for col in self.room_columns:
@@ -46,7 +42,7 @@ class LightPredictor:
                 input_data[col][0] = avg_value
 
         # Convert to DataFrame in the correct feature order
-        feature_order = ['timestamp'] + list(self.room_columns) + ['light_level']
+        feature_order = ['hour'] + list(self.room_columns) + ['light_level']
         input_df = pd.DataFrame(input_data)[feature_order]
 
         # Predict using the model
@@ -83,8 +79,8 @@ class LightPredictor:
 
 # Example usage
 if __name__ == "__main__":
-    model_path = "/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/Prediction/ModelsWeights/xgb_model_nboost30.json"
-    encoder_path = "/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/Prediction/ModelsWeights/room_encoder.npy"
+    model_path = "/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/python_project/prediction/models_weights/xgb_model.json"
+    encoder_path = "/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/python_project/prediction/models_weights/room_encoder.npy"
     
     predictor = LightPredictor(model_path, encoder_path)
     
