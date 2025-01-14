@@ -8,7 +8,7 @@ scripts_extension = '.py'
 scripts_folder = {
     scripts[0]: 'python_project/data_proxy/',
     scripts[1]: 'python_project/data_proxy/',
-    scripts[2]: 'python_project/utils/'
+    scripts[2]: 'python_project/telegram/'
 }
 #scripts_folder = "python_project\\data_proxy\\" for Windows
 processes = []

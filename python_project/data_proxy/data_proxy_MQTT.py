@@ -72,6 +72,12 @@ class DataProxyMQTT:
         self.logger.info("MQTT client disconnected.")
 
     def publish_message(self, topic, message):
+        ''' Publish a message to a specific MQTT topic.
+            args:  
+                topic: str: The topic to publish the message to (MQTT_TOPIC_POSITION or MQTT_TOPIC_SAMPLING).
+                message: str: The message to publish 
+                    (one of the available position name from config_position.json, or the number of seconds between different sampling).
+        '''
         """
         Publish a message to a specific MQTT topic.
         """
@@ -120,15 +126,12 @@ if __name__ == "__main__":
         # Example usage
         mqtt_proxy = DataProxyMQTT()
         mqtt_proxy.connect()
-
         # Publish messages
         mqtt_proxy.publish_message(MQTT_TOPIC_SAMPLING, "5s")  # Example: Set sampling rate to 5 seconds
         mqtt_proxy.change_position("Living Room")  # Example: Change position to Living Room
-
         # Keep the script running for MQTT to continue
         while True:
             pass
-
     except KeyboardInterrupt:
         mqtt_proxy.disconnect()
         print("MQTT client disconnected.")

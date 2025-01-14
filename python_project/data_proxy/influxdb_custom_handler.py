@@ -1,8 +1,7 @@
 # to access configuration constants
 from configs import *
-from datetime import datetime
-import influxdb_client, os, time
-from influxdb_client import InfluxDBClient, Point, WritePrecision
+import influxdb_client
+from influxdb_client import Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 
 client = influxdb_client.InfluxDBClient(url=INFLUXDB_URL, token=INFLUXDB_TOKEN, org=INFLUXDB_ORG)

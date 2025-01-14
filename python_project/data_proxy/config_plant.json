@@ -14,16 +14,16 @@
         "sensor": "ESP32_1"
     },
     {
-        "name": "dracaena",
-        "code": 4,
-        "optimal_light_amount": 6,
+        "name": "lucky_bamboo",
+        "code": 2,
+        "optimal_light_amount": 7,
         "position": "bedroom",
         "sensor": "ESP32_1"
     },
     {
-        "name": "lucky_bamboo",
-        "code": 2,
-        "optimal_light_amount": 7,
+        "name": "dracaena",
+        "code": 4,
+        "optimal_light_amount": 9,
         "position": "bedroom",
         "sensor": "ESP32_1"
     }

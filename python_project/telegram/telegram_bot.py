@@ -3,9 +3,9 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackQueryHandler, ConversationHandler, CallbackContext
 
 import sys
-sys.path.append('/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/python_project/data_proxy')
-from configs import *
-from plant_manager import PlantLightManager
+sys.path.append('/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/python_project/')
+from data_proxy.configs import *
+from prediction.plant_manager import PlantLightManager
 
 # Define states for the conversation
 ADDING_PLANT, MODIFY_PLANT, DELETING_PLANT = 1, 2, 3
@@ -228,7 +228,7 @@ async def handle_modifying_position(update: Update, context: CallbackContext):
     """Handle modifying a plant."""
     try:
         position_details = update.message.text.split(',')
-        if len(position_details) != 4:
+        if len(position_details) != 5:
             await update.message.reply_text("Please provide the position details in the correct format: name, ID, description, sensor.")
             return MODIFY_POSITION  # Stay in the ADDING_POSITION state to capture valid input
         #delete position with the same ID

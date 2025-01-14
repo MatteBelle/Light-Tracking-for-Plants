@@ -1,7 +1,9 @@
 import json
 from influxdb_client import InfluxDBClient
 from influxdb_client.client.write_api import SYNCHRONOUS
-from configs import *
+import sys
+sys.path.append('/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/python_project/')
+from data_proxy.configs import *
 class PlantLightManager:
     # def __init__(self,
     #              influxdb_url = INFLUXDB_URL,
@@ -90,14 +92,16 @@ class PlantLightManager:
                         best_light = avg_light
 
                 # If no optimal position found, suggest the best available improvement
-                if not suggestions and best_position:
+                if best_position:
                     suggestions.append(
                         f"Move plant '{name}' (requires {optimal_light}) to position '{best_position}' (provides {best_light}). "
                         f"It's not optimal, but it's better than '{current_position}' (provides {current_light})."
                     )
+                    break
                 # If no improvement is possible
-                if not suggestions:
-                    suggestions.append(f"No enough light for plant '{name}', but current room is the best available.")
+                suggestions.append(f"No enough light for plant '{name}', but current room is the best available.")
+            else:
+                print(plant["name"] + "is receiving enough light:" + str(current_light) + "requiring: " + str(optimal_light))
 
         # Return all suggestions
         return suggestions if suggestions else ["All plants are receiving sufficient light."]
