@@ -48,6 +48,8 @@ class LightPredictor:
         # Predict using the model
         dmatrix = xgb.DMatrix(input_df)
         prediction = self.model.predict(dmatrix)
+        # crop prediction in the range [0, 100]
+        prediction = np.clip(prediction, 0, 100)
         return prediction[0]  # Return the single prediction value
 
     def predict_n(self, timestamp, room, light_level, n=1):

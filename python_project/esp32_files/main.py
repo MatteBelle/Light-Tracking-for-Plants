@@ -17,8 +17,9 @@ SERVER_URL = ":5000/sensor_data"
 
 # Server and MQTT broker details (alternating options)
 MQTT_ADDRESSES = [
+    "172.20.10.2",
     "192.168.1.92", # Macos
-    "172.20.10.15",
+#    "172.20.10.15",
     "192.168.1.67" # Windows
 ]
 
@@ -32,7 +33,7 @@ LIGHT_SENSOR_PIN2 = 39  # GPIO 39
 LED_PIN = Pin(5, Pin.OUT)
 
 # Default sampling rate and position
-sampling_rate = 5000  # milliseconds
+sampling_rate = 60000  # milliseconds
 current_position = "bedroom"
 
 # Wi-Fi connection setup
@@ -42,7 +43,10 @@ def connect_wifi():
 
     for ssid, password in WIFI_CREDENTIALS:
         print(f"[WiFi] Trying to connect to {ssid}...")
-        wlan.connect(ssid, password)
+        try:
+            wlan.connect(ssid, password)
+        except Exception as e:
+            print("Error sending connecting, re-trying:", e)
         attempts = 10
         while not wlan.isconnected() and attempts > 0:
             print(f"[WiFi] Waiting for connection to {ssid}...")
@@ -120,15 +124,18 @@ def interpret_light(value, sensor_id):
 
 # Main function
 def main():
-    if not connect_wifi():
-        print("[WiFi] Unable to connect to any network. Exiting...")
-        return
-
-    client = setup_mqtt()
-    if not client:
-        print("[MQTT] Unable to connect to any broker. Exiting...")
-        return
-
+#    print(utime.ticks_ms())
+    while True:
+        if not connect_wifi():
+            print("[WiFi] Unable to connect to any network. Retrying...")
+        else:
+            break
+    while True:
+        client = setup_mqtt()
+        if not client:
+            print("[MQTT] Unable to connect to any broker. Retrying...")
+        else:
+            break
     while True:
         LED_PIN.off()
         # MQTT check
@@ -154,7 +161,11 @@ def main():
         # Send data via HTTP
         try:
             print(data)
+            print(utime.ticks_ms())
+            send_time = utime.ticks_ms()
             response = urequests.post(SERVER_URL_COMPLETE, json=data)
+            receive_time = utime.ticks_ms()
+            print("travel time (in seconds): " + str((receive_time-send_time)/1000))
             print("Response:", response.text)
             response.close()
         except Exception as e:

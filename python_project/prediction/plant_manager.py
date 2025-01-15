@@ -100,8 +100,6 @@ class PlantLightManager:
                     break
                 # If no improvement is possible
                 suggestions.append(f"No enough light for plant '{name}', but current room is the best available.")
-            else:
-                print(plant["name"] + "is receiving enough light:" + str(current_light) + "requiring: " + str(optimal_light))
 
         # Return all suggestions
         return suggestions if suggestions else ["All plants are receiving sufficient light."]

@@ -9,7 +9,7 @@
     {
         "name": "peace_lily",
         "code": 3,
-        "optimal_light_amount": 5,
+        "optimal_light_amount": 6,
         "position": "bedroom",
         "sensor": "ESP32_1"
     },

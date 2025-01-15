@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Prompt user for broker details if not set as environment variables
-BROKER=${BROKER:-"127.0.0.1"}  # Default: localhost
+#BROKER=${BROKER:-"127.0.0.1"}  # Default: localhost
+BROKER=${BROKER:-"172.20.10.2"}  # Default: localhost
 PORT=${PORT:-1883}             # Default MQTT port
 
 # Prompt user for topic and message

@@ -2,7 +2,7 @@
     {
         "name": "bedroom",
         "ID": 1,
-        "description": "Matteo's current bedroom",
+        "description": "Matteo's bedroom",
         "sensor": "ESP32_1"
     },
     {
