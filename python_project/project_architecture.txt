@@ -1,0 +1,26 @@
+python_project/
+    README.md
+    run_all.py
+    data_proxy/
+        data_proxy_HTTP.py
+        configs.py
+        config_plant.json
+        config_position.json
+        influxdb_custom_handler.py
+        data_proxy_MQTT.py
+    prediction/
+        xgb_prediction.py
+        plant_manager.py
+        AI_working_XGB.py
+        AI_model_rewrittenToHandle.py
+        model_weights/
+            xgb_model.json
+            xgb_model_nboost30.json
+    telegram/
+        telegram_bot.py
+        boot.py
+        main.py
+requirements.txt
+publish_mqtt.sh
+start_services.sh
+stop_services.sh

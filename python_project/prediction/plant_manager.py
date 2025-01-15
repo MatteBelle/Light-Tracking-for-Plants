@@ -1,21 +1,14 @@
 import json
 from influxdb_client import InfluxDBClient
-from influxdb_client.client.write_api import SYNCHRONOUS
 import sys
 sys.path.append('/Users/a39328/Desktop/IOT_PRJ/Light-Tracking-for-Plants/Light-Tracking-for-Plants/python_project/')
 from data_proxy.configs import *
+
+# Define the PlantLightManager class
+# This class will be used to suggest new positions for plants based on the average light levels
+# recorded in the InfluxDB database.
+# The suggestions are based on the optimal light amount specified in the plant configuration file.
 class PlantLightManager:
-    # def __init__(self,
-    #              influxdb_url = INFLUXDB_URL,
-    #              influxdb_token = INFLUXDB_TOKEN,
-    #              influxdb_org = INFLUXDB_ORG,
-    #              bucket = INFLUXDB_BUCKET,
-    #              measurement = INFLUXDB_MEASUREMENT_NAME,
-    #              config_file = CONFIG_PLANT_FILE):
-    #     self.client = InfluxDBClient(url=influxdb_url, token=influxdb_token, org=influxdb_org)
-    #     self.bucket = bucket
-    #     self.measurement = measurement
-    #     self.config_file = config_file
     def __init__(self):
         self.bucket = INFLUXDB_BUCKET
         self.measurement = INFLUXDB_MEASUREMENT_NAME
