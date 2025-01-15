@@ -6,4 +6,5 @@
 sensor_data.json
 *local*
 .DS_Store
-*dataset_utility/*
+*dataset_utility*
+*__pycache__/*
