@@ -6,3 +6,4 @@
 sensor_data.json
 *local*
 .DS_Store
+*dataset_utility/*
