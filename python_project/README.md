@@ -1,5 +1,6 @@
 # Light-Tracking-for-Plants
-This project involves creating an IoT system to monitor daily light exposure for plants using ESP32 and LDR sensors. The system collects data to optimize plant placement based on light needs. HTTP and MQTTP protocols are used.
+This project involves creating an IoT system to monitor daily light exposure for plants using ESP32 and LDR sensors. The system collects data to optimize plant placement based on light needs. HTTP and MQTTP protocols are used, local InfluxDB is used to stock data and query it and Grafana is used to show graphs.
+A Telegram bot is deployed to access information about plants and rooms and change it.
 
 # If run locally follow the following steps:
 1) Clone this repository.
@@ -19,6 +20,7 @@ TELEGRAM_BOT=yourtelegrambotkey
 9.1) it runs the HTTP python file. (python_project/data_proxy/data_proxy_HTTP.py)
 9.2) it runs the MQTT python file. (python_project/data_proxy/data_proxy_MQTT.py)
 9.3) it runs un the Telegram file (python_project/telegram/telegram_bot.py)
+    9.3.1) n.b. To work with your telegram Bot you need to get a personal token
 10) Finally, run the esp32 having two ldr sensors connected (eventually, modify the pins in the esp_32 main file).
 11) Via Telegram bot you can:
     - add, delete or modify plants
