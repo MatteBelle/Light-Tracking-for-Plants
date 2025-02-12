@@ -10,12 +10,15 @@ A Telegram bot is deployed to access information about plants and rooms and chan
 5) Copy the folder "esp32_files" on your ESP_32 device supporting micropython (look for tutorials to flash it)
 6) Modify the variables in this file for HTTP, MQTT and WI-FI connections to connect it to the same network as the pc.
 7) Modify the variables in the "configs.py" file (python_project/data_proxy/configs.py) for influxdb, HTTP and MQTT.
-8) Create a ".env" file in "data_proxy/" containing the three sensitive variables in this format (they will be loaded in configs at runtime):
+8.1) Create a ".env" file in "data_proxy/" containing the three sensitive variables in this format (they will be loaded in configs at runtime):
 "
 INFLUXDB_PASSWORD=yourinfluxdbpassword
 INFLUXDB_TOKEN=yourinfluxdbtoken
 TELEGRAM_BOT=yourtelegrambotkey
 "
+8.2) Run "sudo influxd" to run influxdb daemon.
+8.3) Run "brew services start mosquitto" to run mosquitto and enable MQTT communications.
+8.4) Run "brew services start grafana" to run grafana daemon.
 9) Run the "run_all.py" file in "python_project/".
 9.1) it runs the HTTP python file. (python_project/data_proxy/data_proxy_HTTP.py)
 9.2) it runs the MQTT python file. (python_project/data_proxy/data_proxy_MQTT.py)
