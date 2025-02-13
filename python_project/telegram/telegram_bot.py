@@ -175,6 +175,7 @@ async def handle_modifying_plant(update: Update, context: CallbackContext):
             "sensor": plant_details[4].strip()
         }
         plants.append(plant)
+        plants.sort(key=lambda x: x['code'])
         write_json_file(CONFIG_PLANT_FILE, plants)
         await update.message.reply_text("Plant modified successfully!")
     except Exception as e:
@@ -228,7 +229,7 @@ async def handle_modifying_position(update: Update, context: CallbackContext):
     """Handle modifying a plant."""
     try:
         position_details = update.message.text.split(',')
-        if len(position_details) != 5:
+        if len(position_details) != 4:
             await update.message.reply_text("Please provide the position details in the correct format: name, ID, description, sensor.")
             return MODIFY_POSITION  # Stay in the ADDING_POSITION state to capture valid input
         #delete position with the same ID
@@ -242,7 +243,8 @@ async def handle_modifying_position(update: Update, context: CallbackContext):
             "sensor": position_details[3].strip()
         }
         positions.append(position)
-        write_json_file(CONFIG_PLANT_FILE, positions)
+        positions.sort(key=lambda x: x['ID'])
+        write_json_file(CONFIG_POSITION_FILE, positions)
         await update.message.reply_text("Position modified successfully!")
     except Exception as e:
         await update.message.reply_text(f"Error: {str(e)}")

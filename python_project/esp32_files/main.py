@@ -153,7 +153,7 @@ def main():
         data = {
             "sensors_values": [ldr1_value, ldr2_value],
             "position": current_position,
-            "sampling_rate": sampling_rate,
+            "sampling_rate": sampling_rate/1000,
             "timestamp": timestamp,
             "device_id": DEVICE_ID
         }

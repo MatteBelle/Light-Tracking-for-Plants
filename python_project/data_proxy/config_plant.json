@@ -23,8 +23,15 @@
     {
         "name": "dracaena",
         "code": 4,
-        "optimal_light_amount": 9,
+        "optimal_light_amount": 8,
         "position": "bedroom",
         "sensor": "ESP32_1"
+    },
+    {
+        "name": "patata",
+        "code": 44,
+        "optimal_light_amount": 7,
+        "position": "bedroom",
+        "sensor": "ESP_32"
     }
 ]

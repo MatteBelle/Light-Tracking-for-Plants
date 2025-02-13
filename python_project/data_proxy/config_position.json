@@ -2,7 +2,7 @@
     {
         "name": "bedroom",
         "ID": 1,
-        "description": "Matteo's bedroom",
+        "description": "Matteo's bedroomz",
         "sensor": "ESP32_1"
     },
     {
@@ -10,5 +10,11 @@
         "ID": 2,
         "description": "house main balcony",
         "sensor": "ESP32_1"
+    },
+    {
+        "name": "bidet",
+        "ID": 4,
+        "description": "super bidet",
+        "sensor": "ESP_32"
     }
 ]
